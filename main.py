@@ -128,7 +128,7 @@ def time_calc(sec):
 
 
 top = tkinter.Tk()
-top.title = "MultiTimer"
+top.title("MultiTimer")
 
 time1 = tkinter.StringVar()
 name1 = tkinter.Entry().grid(row=0, column=0)
