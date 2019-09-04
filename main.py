@@ -129,6 +129,9 @@ def time_calc(sec):
 
 top = tkinter.Tk()
 top.title = "MultiTimer"
+# .geometry("500x100") sets the size of the window to 500x100. Optionally you can delete this line and it will draw the window to a scale where all the components fit and not let the user shrink or enlarge it.
+top.geometry("500x100")
+top.resizable(0, 0) # This stops the user from resizing in the x or y direction
 
 time1 = tkinter.StringVar()
 name1 = tkinter.Entry().grid(row=0, column=0)
