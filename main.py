@@ -129,8 +129,6 @@ def time_calc(sec):
 
 top = tkinter.Tk()
 top.title = "MultiTimer"
-# .geometry("500x100") sets the size of the window to 500x100. Optionally you can delete this line and it will draw the window to a scale where all the components fit and not let the user shrink or enlarge it.
-top.geometry("500x100")
 top.resizable(0, 0) # This stops the user from resizing in the x or y direction
 
 time1 = tkinter.StringVar()
@@ -162,7 +160,10 @@ button4stop = tkinter.Button(text="STOP", command=stop4).grid(row=2, column=3)
 button4reset = tkinter.Button(text="RESET", command=reset4).grid(row=2, column=3, sticky="E")
 
 while True:
-    top.update_idletasks()
+    try:
+        top.update_idletasks()
+    except tkinter.TclError:
+        break
     top.update()
     if started1:
         time1.set(time_calc(int(time.time() - beginning1)))
@@ -188,3 +189,4 @@ while True:
         time4.set(time_calc(int(end4 - beginning4)))
     else:
         time4.set("0:00:00")
+    time.sleep(.1)
