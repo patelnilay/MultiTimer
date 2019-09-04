@@ -159,7 +159,10 @@ button4stop = tkinter.Button(text="STOP", command=stop4).grid(row=2, column=3)
 button4reset = tkinter.Button(text="RESET", command=reset4).grid(row=2, column=3, sticky="E")
 
 while True:
-    top.update_idletasks()
+    try:
+        top.update_idletasks()
+    except tkinter.TclError:
+        break
     top.update()
     if started1:
         time1.set(time_calc(int(time.time() - beginning1)))
