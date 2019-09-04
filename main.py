@@ -185,3 +185,4 @@ while True:
         time4.set(time_calc(int(end4 - beginning4)))
     else:
         time4.set("0:00:00")
+    time.sleep(.1)
